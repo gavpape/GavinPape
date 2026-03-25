@@ -1,1 +1,377 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gavin Pape Portfolio</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: Georgia, serif;
+  background: #f9f7f4;
+  color: #1a1814;
+}
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: #f9f7f4;
+  border-bottom: 1px solid #ddd;
+  padding: 1.2rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+nav .logo { font-size: 1.1rem; font-weight: bold; }
+
+nav ul { list-style: none; display: flex; gap: 2rem; }
+
+nav ul a {
+  text-decoration: none;
+  color: #666;
+  font-family: Arial, sans-serif;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+nav ul a:hover { color: #1a1814; }
+
+section {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+}
+
+#hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 8rem;
+}
+
+.eyebrow {
+  font-family: Arial, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c9622f;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 4.5rem;
+  line-height: 1.05;
+  margin-bottom: 1.2rem;
+}
+
+h1 em {
+  font-style: italic;
+  color: #c9622f;
+}
+
+.subtitle {
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  color: #666;
+  max-width: 440px;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.6rem;
+  border: 1.5px solid #1a1814;
+  color: #1a1814;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.btn:hover { background: #1a1814; color: #f9f7f4; }
+
+.section-label {
+  font-family: Arial, sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 0.4rem;
+}
+
+h2 {
+  font-size: 2.8rem;
+  line-height: 1.1;
+  margin-bottom: 2.5rem;
+}
+
+/* ABOUT */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.about-text p {
+  font-family: Arial, sans-serif;
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+/* SKILLS */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: #ddd;
+  border: 1px solid #ddd;
+}
+
+.skill-item {
+  background: #f9f7f4;
+  padding: 1.4rem 1.5rem;
+}
+
+.skill-name {
+  font-family: Arial, sans-serif;
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-bottom: 0.6rem;
+}
+
+.skill-bar {
+  height: 2px;
+  background: #e0dbd5;
+}
+
+.skill-fill {
+  height: 100%;
+  background: #c9622f;
+}
+
+/* EXPERIENCE */
+.exp-item {
+  padding: 1.6rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.exp-item:first-child { border-top: 1px solid #ddd; }
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.4rem;
+}
+
+.exp-header h3 { font-size: 1.2rem; }
+
+.exp-date {
+  font-family: Arial, sans-serif;
+  font-size: 0.75rem;
+  color: #999;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px solid #ddd;
+  padding: 0.25rem 0.6rem;
+  white-space: nowrap;
+}
+
+.exp-role {
+  font-family: Arial, sans-serif;
+  font-size: 0.82rem;
+  color: #c9622f;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.exp-item p {
+  font-family: Arial, sans-serif;
+  font-size: 0.88rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* CONTACT */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+.contact-text p {
+  font-family: Arial, sans-serif;
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.contact-links { display: flex; flex-direction: column; }
+
+.contact-link {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid #ddd;
+  text-decoration: none;
+  color: #1a1814;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+}
+
+.contact-link:first-child { border-top: 1px solid #ddd; }
+.contact-link:hover { color: #c9622f; }
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  font-size: 0.75rem;
+  color: #999;
+  border-top: 1px solid #ddd;
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Gavin Pape</div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="hero">
+  <p class="eyebrow">Portfolio — 2026</p>
+  <h1>Gavin<br><em>Pape</em></h1>
+  <p class="subtitle">Finance student at Ohio University with hands-on experience in operations, customer service, and team leadership.</p>
+  <a href="#experience" class="btn">View My Experience</a>
+</section>
+
+<section id="about">
+  <p class="section-label">01 — About</p>
+  <h2>A little<br>about me.</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>Hi! I'm Gavin Pape, a Finance major at Ohio University's College of Business in Athens, Ohio, expected to graduate May 2027.</p>
+      <p>I've built real-world experience across operations, customer service, and fulfillment — developing strong skills in communication, problem-solving, and working in fast-paced environments.</p>
+      <p>Outside of class I'm an active member of Ohio University's Club Lacrosse team and a recipient of the Ohio University Honor's Excellence Scholarship.</p>
+    </div>
+    <div class="about-text">
+      <p><strong>University:</strong> Ohio University</p>
+      <p><strong>Major:</strong> Finance (BBA)</p>
+      <p><strong>Expected Graduation:</strong> May 2027</p>
+      <p><strong>Location:</strong> Athens, Ohio</p>
+      <p><strong>Email:</strong> gavpape@gmail.com</p>
+      <p><strong>Phone:</strong> 614.800.7313</p>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <p class="section-label">02 — Skills</p>
+  <h2>What I<br>bring to the table.</h2>
+  <div class="skills-grid">
+    <div class="skill-item">
+      <div class="skill-name">Financial Analysis</div>
+      <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-name">Customer Service</div>
+      <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-name">Operations</div>
+      <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-name">Team Collaboration</div>
+      <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-name">Inventory Management</div>
+      <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-name">Communication</div>
+      <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <p class="section-label">03 — Experience</p>
+  <h2>Where I've<br>worked.</h2>
+
+  <div class="exp-item">
+    <div class="exp-header">
+      <h3>The Home Depot</h3>
+      <span class="exp-date">Mar 2025 – Present</span>
+    </div>
+    <div class="exp-role">Order Fulfillment — Columbus, Ohio</div>
+    <p>Processed and prepared customer orders for in-store pickup and delivery. Collaborated across departments to maintain accurate inventory and utilized order management systems to track and verify orders.</p>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-header">
+      <h3>Ink It</h3>
+      <span class="exp-date">Apr – Aug 2023</span>
+    </div>
+    <div class="exp-role">Ink Printer — Columbus, Ohio</div>
+    <p>Operated apparel printing equipment including screen printing presses, heat presses, and embroidery machines. Managed high-volume merchandise orders with a focus on quality control and timely fulfillment.</p>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-header">
+      <h3>Longhorn Steakhouse</h3>
+      <span class="exp-date">Dec 2021 – Dec 2022</span>
+    </div>
+    <div class="exp-role">Server / Host / Food Runner — Columbus, Ohio</div>
+    <p>Managed up to 5 tables simultaneously while performing multiple roles. Reduced service times by approximately 10 minutes per table through strong multitasking, coordination with kitchen staff, and a commitment to guest satisfaction.</p>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-header">
+      <h3>Sierra Trading</h3>
+      <span class="exp-date">Feb – Dec 2021</span>
+    </div>
+    <div class="exp-role">Sales Associate — Columbus, Ohio</div>
+    <p>Delivered personalized customer assistance and worked with cross-functional teams on strategic merchandising displays. Maintained an organized sales floor and drove rewards card enrollments through strong communication skills.</p>
+  </div>
+</section>
+
+<section id="contact">
+  <p class="section-label">04 — Contact</p>
+  <h2>Let's get<br>in touch.</h2>
+  <div class="contact-grid">
+    <div class="contact-text">
+      <p>I'm currently open to internships, part-time opportunities, and conversations about finance and business. Feel free to reach out!</p>
+      <a href="mailto:gavpape@gmail.com" class="btn">Send Me an Email</a>
+    </div>
+    <div class="contact-links">
+      <a href="https://www.linkedin.com/in/gavinpape1/" target="_blank" class="contact-link">LinkedIn ↗</a>
+      <a href="mailto:gavpape@gmail.com" class="contact-link">gavpape@gmail.com ↗</a>
+      <a href="tel:6148007313" class="contact-link">614.800.7313 ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Gavin Pape</footer>
+
+</body>
+</html>
