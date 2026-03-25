@@ -22,8 +22,9 @@ h1 em { font-style: italic; color: #c9622f; }
 .btn:hover { background: #1a1814; color: #f9f7f4; }
 .section-label { font-family: Arial, sans-serif; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: #999; margin-bottom: 0.4rem; }
 h2 { font-size: 2.8rem; line-height: 1.1; margin-bottom: 2.5rem; }
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
 .about-text p { font-family: Arial, sans-serif; color: #666; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem; }
+.about-photo { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top; display: block; }
 .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #ddd; border: 1px solid #ddd; }
 .skill-item { background: #f9f7f4; padding: 1.4rem 1.5rem; }
 .skill-name { font-family: Arial, sans-serif; font-size: 0.85rem; font-weight: bold; margin-bottom: 0.6rem; }
@@ -36,6 +37,7 @@ h2 { font-size: 2.8rem; line-height: 1.1; margin-bottom: 2.5rem; }
 .exp-date { font-family: Arial, sans-serif; font-size: 0.75rem; color: #999; letter-spacing: 0.05em; text-transform: uppercase; border: 1px solid #ddd; padding: 0.25rem 0.6rem; white-space: nowrap; }
 .exp-role { font-family: Arial, sans-serif; font-size: 0.82rem; color: #c9622f; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.04em; }
 .exp-item p { font-family: Arial, sans-serif; font-size: 0.88rem; color: #666; line-height: 1.6; }
+.banner-photo { width: 100%; height: 340px; object-fit: cover; object-position: center 30%; display: block; margin: 0; }
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
 .contact-text p { font-family: Arial, sans-serif; color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem; }
 .contact-links { display: flex; flex-direction: column; }
@@ -43,9 +45,18 @@ h2 { font-size: 2.8rem; line-height: 1.1; margin-bottom: 2.5rem; }
 .contact-link:first-child { border-top: 1px solid #ddd; }
 .contact-link:hover { color: #c9622f; }
 footer { text-align: center; padding: 2rem; font-family: Arial, sans-serif; font-size: 0.75rem; color: #999; border-top: 1px solid #ddd; }
+@media (max-width: 640px) {
+  nav { padding: 1rem 1.5rem; }
+  nav ul { gap: 1rem; }
+  h1 { font-size: 3rem; }
+  .about-grid { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+  .contact-grid { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
+
 <nav>
   <div class="logo">Gavin Pape</div>
   <ul>
@@ -55,12 +66,14 @@ footer { text-align: center; padding: 2rem; font-family: Arial, sans-serif; font
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
+
 <section id="hero">
   <p class="eyebrow">Portfolio — 2026</p>
   <h1>Gavin<br><em>Pape</em></h1>
   <p class="subtitle">Finance student at Ohio University with hands-on experience in operations, customer service, and team leadership.</p>
   <a href="#experience" class="btn">View My Experience</a>
 </section>
+
 <section id="about">
   <p class="section-label">01 — About</p>
   <h2>A little<br>about me.</h2>
@@ -69,17 +82,16 @@ footer { text-align: center; padding: 2rem; font-family: Arial, sans-serif; font
       <p>Hi! I'm Gavin Pape, a Finance major at Ohio University's College of Business in Athens, Ohio, expected to graduate May 2027.</p>
       <p>I've built real-world experience across operations, customer service, and fulfillment — developing strong skills in communication, problem-solving, and working in fast-paced environments.</p>
       <p>Outside of class I'm an active member of Ohio University's Club Lacrosse team and a recipient of the Ohio University Honor's Excellence Scholarship.</p>
-    </div>
-    <div class="about-text">
+      <br>
       <p><strong>University:</strong> Ohio University</p>
       <p><strong>Major:</strong> Finance (BBA)</p>
-      <p><strong>Expected Graduation:</strong> May 2027</p>
-      <p><strong>Location:</strong> Athens, Ohio</p>
+      <p><strong>Graduation:</strong> May 2027</p>
       <p><strong>Email:</strong> gavpape@gmail.com</p>
-      <p><strong>Phone:</strong> 614.800.7313</p>
     </div>
+    <img src="gp780422_ohio_edu-06a61339.jpg" alt="Gavin Pape" class="about-photo">
   </div>
 </section>
+
 <section id="skills">
   <p class="section-label">02 — Skills</p>
   <h2>What I<br>bring to the table.</h2>
@@ -110,6 +122,9 @@ footer { text-align: center; padding: 2rem; font-family: Arial, sans-serif; font
     </div>
   </div>
 </section>
+
+<img src="IMG_4729.jpeg" alt="Gavin snowboarding" class="banner-photo">
+
 <section id="experience">
   <p class="section-label">03 — Experience</p>
   <h2>Where I've<br>worked.</h2>
@@ -146,6 +161,7 @@ footer { text-align: center; padding: 2rem; font-family: Arial, sans-serif; font
     <p>Delivered personalized customer assistance and worked with cross-functional teams on strategic merchandising displays. Maintained an organized sales floor and drove rewards card enrollments.</p>
   </div>
 </section>
+
 <section id="contact">
   <p class="section-label">04 — Contact</p>
   <h2>Let's get<br>in touch.</h2>
@@ -161,6 +177,7 @@ footer { text-align: center; padding: 2rem; font-family: Arial, sans-serif; font
     </div>
   </div>
 </section>
+
 <footer>© 2026 Gavin Pape</footer>
 </body>
 </html>
